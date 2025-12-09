@@ -311,7 +311,7 @@ func getWasmFromContractCode(statedb vm.StateDB, prefixedWasm []byte, maxWasmSiz
 	if prefixedWasm == nil {
 		return nil, ProgramNotWasmError()
 	}
-	if state.IsStylusProgram(prefixedWasm) {
+	if state.IsStylusProgramClassic(prefixedWasm) {
 		wasm, dictByte, err := state.StripStylusPrefix(prefixedWasm)
 		if err != nil {
 			return nil, err
